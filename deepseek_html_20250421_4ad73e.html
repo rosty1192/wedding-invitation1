@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приглашение на свадьбу | Диана & Максим</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Playfair Display', serif;
+            color: #333;
+            background-color: #f9f3f0;
+        }
+
+        .main-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .invitation-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+        }
+
+        .invitation-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+        }
+
+        .colors-section {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .colors-title {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: #333;
+            font-weight: normal;
+        }
+
+        .color-palette {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .color-box {
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 10px;
+            color: white;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+            font-size: 12px;
+        }
+
+        /* Остальные стили из предыдущего кода остаются без изменений */
+        .add-to-calendar {
+            font-size: 14px;
+            margin-bottom: 20px;
+            color: #888;
+        }
+
+        .names {
+            font-size: 36px;
+            line-height: 1.3;
+            margin: 20px 0;
+            letter-spacing: 1px;
+        }
+
+        .ampersand {
+            font-size: 24px;
+            margin: 10px 0;
+            color: #b78d65;
+        }
+
+        .date {
+            font-size: 28px;
+            margin: 30px 0;
+            font-weight: bold;
+        }
+
+        .address {
+            font-size: 18px;
+            margin: 20px 0;
+            line-height: 1.5;
+        }
+
+        .waiting {
+            font-size: 20px;
+            margin: 30px 0;
+            font-style: italic;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .countdown-number {
+            font-size: 32px;
+            font-weight: bold;
+            color: #b78d65;
+        }
+
+        .countdown-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 600px) {
+            .names {
+                font-size: 28px;
+            }
+            .date {
+                font-size: 22px;
+            }
+            .address {
+                font-size: 16px;
+            }
+            .countdown-number {
+                font-size: 24px;
+            }
+            .color-box {
+                width: 70px;
+                height: 70px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        <section class="invitation-section">
+            <div class="invitation-container">
+                <div class="add-to-calendar">Добавить в календарь</div>
+                
+                <div class="names">
+                    В<br>
+                    ДИАНА<br>
+                    <div class="ampersand">&</div>
+                    МАКСИМ
+                </div>
+                
+                <div class="date">25 ИЮЛЯ 2025 В 18:00</div>
+                
+                <div class="address">
+                    Kazanskaya street, 4A<br>
+                    Елабуга, Респ. Татарстан
+                </div>
+                
+                <div class="waiting">ЖДЕМ ВАС</div>
+                
+                <div class="countdown">
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="days">00</div>
+                        <div class="countdown-label">Дней</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="hours">00</div>
+                        <div class="countdown-label">Часов</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="minutes">00</div>
+                        <div class="countdown-label">Минут</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="colors-section">
+            <h2 class="colors-title">ЖЕЛАТЕЛЬНЫЕ ОТТЕНКИ ЦВЕТОВ В ОДЕЖДЕ НА ТОРЖЕСТВО</h2>
+            <div class="color-palette">
+                <div class="color-box" style="background-color: #FEF0FF;">#FEF0FF</div>
+                <div class="color-box" style="background-color: #D97F8B;">#D97F8B</div>
+                <div class="color-box" style="background-color: #FFC2BE;">#FFC2BE</div>
+                <div class="color-box" style="background-color: #ADB680;">#ADB680</div>
+                <div class="color-box" style="background-color: #E0CFC3;">#E0CFC3</div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Установите дату мероприятия (2025-07-25 в 18:00)
+        const eventDate = new Date('2025-07-25T18:00:00');
+        
+        function updateCountdown() {
+            const now = new Date();
+            const diff = eventDate - now;
+            
+            if (diff <= 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                return;
+            }
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+        }
+        
+        // Обновляем счетчик сразу и затем каждую минуту
+        updateCountdown();
+        setInterval(updateCountdown, 60000);
+    </script>
+</body>
+</html>
